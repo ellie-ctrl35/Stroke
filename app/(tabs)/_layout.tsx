@@ -13,15 +13,27 @@ function TabBarIcon(props: {
 }) {
   return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
 }
+const screenOptions={
+  tabBarShowLabel:true,
+  headerShown:true,
+  tabBarStyle:{
+    height:"11%",
+    position: 'absolute',
+    elevation: 0.1,
+    backgroundColor:'dodgerblue',
+    width:'95%',
+    bottom:'2%',
+    left:'2%',
+    borderRadius:'7%'
+  }
+}
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
 
   return (
     <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-      }}>
+      screenOptions={screenOptions}>
       <Tabs.Screen
         name="index"
         options={{
